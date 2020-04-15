@@ -124,10 +124,10 @@ kredit <- read_xlsx('Aggregierte_Wochenzahlen_SPA-Mitglieder_Zahlungen_mit_inlä
 
 
 #Kontrolle: Stimmen die Variablennamen, unit und location
-checkdf<- kredit %>%
+check_names<- kredit %>%
   select(variable,variable_long, variable_short,unit,location)
-xlsx::write.xlsx(checkdf,'checkdf.xlsx')
-View(checkdf)
+xlsx::write.xlsx(check_names,'check_names.xlsx')
+View(check_names)
 
 kredit_long <- kredit%>%
   filter(!is.na(variable_long))%>%
