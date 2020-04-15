@@ -1,4 +1,4 @@
-# covid19monitoring_economy_Kredikarten
+# covid19monitoring_economy_Kreditkarten
 
 <h2> Grundlage </h2>
 Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kreditkarten (ohne Bargeldbezüge). Die Daten stammen von den Mitgliedern der Swiss Payment Association/SPA (BonusCard.ch AG, Cembra Money Bank AG, Cornèr Bank AG, PostFinance AG, Swisscard AECS GmbH, UBS Switzerland AG, Viseca Card Services SA) . 
@@ -9,7 +9,6 @@ Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kredi
 * Die ausgewiesenen Werte sind über einen Zeitraum von sieben Tagen kumuliert (Donnerstag bis Mittwoch). So werden verarbeitungsbedingte Tages-Peaks zu vermieden. Das Datum (variable = date) entsprich jeweils dem Mittwoch, sprich dem letzten Tag des berücksichtigen Zeitraumes.
 
 <h2> Variablen </h2>
-
 
 <strong>... </strong> = 	<br>
 <strong>...</strong> = <br>
