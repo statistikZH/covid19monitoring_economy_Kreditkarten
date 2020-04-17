@@ -26,7 +26,7 @@ library(plotly)
 ```
 
 ```{r Daten einlesen und allgemeine Aufbereitungen, echo = FALSE}
-kredit <- read_xlsx('Aggregierte_Wochenzahlen_SPA-Mitglieder_Zahlungen_mit_inländische Kredit....xlsx',sheet ='Tabelle1', skip=2) %>%
+kredit <- read_xlsx('Aggregierte_Wochenzahlen_SPA-Mitglieder_Zahlungen_mit_inländische Kreditkarten.xlsx',sheet ='Tabelle1', skip=2) %>%
   rename(variable = ...1)%>%
   
   mutate(variable_long = c(
