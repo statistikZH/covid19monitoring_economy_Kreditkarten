@@ -8,7 +8,7 @@ Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kredi
 - Weil die Erhebung der hier verfügbaren Daten in kürzeren Intervallen stattfindet als für die SNB, werden vereinzelte Kreditkartenprodukte nicht berücksichtigt, welche in die monatlichen Daten SNB-Finanzmarktstatistik einfliessen. Die Zahlen sind hinsichtlich der stattgefundenen bzw. stattfindenden Entwicklungen aber dennoch aussagekräftig. <br>
 - Die ausgewiesenen Werte sind über einen Zeitraum von sieben Tagen kumuliert (Donnerstag bis Mittwoch). So werden verarbeitungsbedingte Tages-Peaks zu vermieden. Das Datum (variable = date) entsprich jeweils dem Donnerstag, sprich dem ersten Tag des berücksichtigen Zeitraumes.
 
-<h2> Variablen </h2>
+<h2> Variablen </h2><br>
 Für jede Transaktionskategorie gibt es Angaben zum Betrag (in Mio. Fr.) sowie zur Anzahl (in Tausend). Die ensprechenden Varialbennamen beginnen mit 'betrag' bzw. mit 'anz'. 
 
 <strong> ..._kktrans_ch_praes </strong> = 	Betrag/Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt <br>
