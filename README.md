@@ -11,10 +11,12 @@ Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kredi
 <h2> Variablen </h2>
 Für jede Transaktionskategorie gibt es Angaben zum Betrag (in Mio. Fr.) sowie zur Anzahl (in Tausend). Die ensprechenden Varialbennamen beginnen mit 'betrag' bzw. mit 'anz'. <br>
 
+<strong> ..._kktrans_ch </strong> = Betrag/Anzahl Kreditkarten-Transaktionen im Inland <br>
+<strong> ..._kktrans_ausl </strong> = Betrag/Anzahl Kreditkarten-Transaktionen im Ausland <br>
+
 <strong> ..._kktrans_ch_praes </strong> = 	Betrag/Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt <br>
 <strong> ..._kktrans_ch_praes_contactless </strong> = Betrag/Anzahl  kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland <br>
 
-<strong> ..._kktrans_ausl </strong> = Betrag/Anzahl Kreditkarten-Transaktionen im Ausland <br>
 
 <strong> ..._kktrans_ch_distanz </strong> =	Betrag/Anzahl  Kreditkarten-Transaktionen Distanzgeschäft im Inland <br>
 <strong> ..._kktrans_ausl_distanz </strong> =	Betrag/Anzahl  Kreditkarten-Transaktionen Distanzgeschäft im Ausland <br>
