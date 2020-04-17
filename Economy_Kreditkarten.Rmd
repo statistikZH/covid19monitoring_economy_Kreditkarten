@@ -142,7 +142,7 @@ kredit_long <- kredit%>%
           update = 'wöchentlich',
          source = 'Swiss Payment Association',
          description = 'https://github.com/statistikZH/covid19monitoring_economy_Kreditkarten')%>%
-  select(date,value,topic,variable_oldname,variable_short,variable_long,location,unit,source,update,public,description)
+  select(date,value,topic,variable_short,variable_long,location,unit,source,update,public,description)
 
 View(kredit_long)
 
