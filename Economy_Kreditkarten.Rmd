@@ -138,7 +138,7 @@ kredit_long <- kredit%>%
   mutate(value = round(value,0))%>%
   rename(variable_oldname = variable)%>%
   mutate(topic= 'Wirtschaft',
-         public = 'no',
+         public = 'yes',
           update = 'wöchentlich',
          source = 'Swiss Payment Association',
          description = 'https://github.com/statistikZH/covid19monitoring_economy_Kreditkarten')%>%
