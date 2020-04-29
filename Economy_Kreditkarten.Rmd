@@ -58,7 +58,7 @@ kredit <- read_xlsx('Aggregierte_Wochenzahlen_SPA-Mitglieder_Zahlungen_mit_inlä
     'betrag_kktrans_ch',
     NA,
     NA,
-    'anz_kkrans_ausl',
+    'anz_kktrans_ausl',
     'betrag_kktrans_ausl',
     NA,
     NA,
