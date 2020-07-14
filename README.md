@@ -1,7 +1,9 @@
 # covid19monitoring_economy_Kreditkarten
 
 ## Grundlage
-Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kreditkarten (ohne Bargeldbezüge). Die Daten stammen von den Mitgliedern der Swiss Payment Association/SPA (BonusCard.ch AG, Cembra Money Bank AG, Cornèr Bank AG, PostFinance AG, Swisscard AECS GmbH, UBS Switzerland AG, Viseca Card Services SA) . 
+Die ausgewiesenen Zahlen beziehen sich auf Transaktionen mit inländischen Kreditkarten (ohne Bargeldbezüge). Die Daten stammen von den Mitgliedern der Swiss Payment Association/SPA (BonusCard.ch AG, Cembra Money Bank AG, Cornèr Bank AG, PostFinance AG, Swisscard AECS GmbH, UBS Switzerland AG, Viseca Card Services SA). 
+
+Seit dem 14. Juli 2020 werden die Daten vom [Projekt Monitoring Consumption](https://public.tableau.com/profile/monitoringconsumptionswitzerland#!/) aufbereitet und öffentlich zur Verfügung gestellt. Die Dokumentation sowie die Daten können auch direkt dort bezogen werden: [Link](https://drive.switch.ch/index.php/s/PSg7Y8Za5LmQ5dn).
 
 ## Methodisches
 
