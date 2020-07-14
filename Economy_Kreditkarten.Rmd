@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Economy_Kreditkarten"
 subtitle: 'Inländische Kreditkarten'
@@ -214,3 +215,221 @@ ggplotly(p2) %>%
   config(displayModeBar = F)
 ```
 
+=======
+---
+title: "Economy_Kreditkarten"
+subtitle: 'Inländische Kreditkarten'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+    theme: lumen
+    highlight: tango
+---
+
+
+```{r Vorbereitungen, echo = F}
+rm(list=ls())
+options(stringsAsFactors = F)
+
+### Packages 
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(plotly)
+```
+
+```{r Daten von Monitoring consumption laden}
+
+kredit_long <- read.csv('https://drive.switch.ch/index.php/s/PSg7Y8Za5LmQ5dn/download?path=%2F&files=Economy_Kreditkarten.csv',encoding = "UTF-8")
+
+write.csv(kredit_long,'Economy_Kreditkarten.csv',row.names=F, fileEncoding = "UTF-8")
+```
+
+
+
+```{r Veraltet: Daten einlesen und allgemeine Aufbereitungen, echo = FALSE}
+#kredit <- read_xlsx('Aggregierte_Wochenzahlen_SPA-Mitglieder_Zahlungen_mit_inländische Kreditkarten.xlsx',sheet ='Tabelle1', skip=2) %>%
+#  rename(variable = ...1)%>%
+#  
+#  mutate(variable_long = c(
+#    NA, 
+#    'Anzahl Kreditkarten-Transaktionen im Inland',
+#    'Betrag Kreditkarten-Transaktionen im Inland',
+#    NA,
+#    NA,
+#    'Anzahl Kreditkarten-Transaktionen im Ausland',
+#    'Betrag Kreditkarten-Transaktionen im Ausland',
+#    NA,
+#    NA,
+#    'Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+#    'Anzahl kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+#    'Betrag Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+#    'Betrag kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+#    NA,
+#    NA,
+#    'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+#    'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+#    NA,
+#    NA,
+#    'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland',
+#    'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland'),
+#    
+#    variable_short = c(
+#    NA, 
+#    'anz_kktrans_ch',
+#    'betrag_kktrans_ch',
+#    NA,
+#    NA,
+#    'anz_kktrans_ausl',
+#    'betrag_kktrans_ausl',
+#    NA,
+#    NA,
+#    'anz_kktrans_ch_praes',
+#    'anz_kktrans_ch_praes_contactless',
+#    'betrag_kktrans_ch_praes',
+#    'betrag_kktrans_ch_praes_contactless',
+#    NA,
+#    NA,
+#    'anz_kktrans_ch_distanz',
+#    'betrag_kktrans_ch_distanz',
+#    NA,
+#    NA,
+#    'anz_kktrans_ausl_distanz',
+#    'betrag_kktrans_ausl_distanz'),
+#    
+#    location= c(
+#    NA, 
+#    'CH',
+#    'CH',
+#    NA,
+#    NA,
+#    'Ausland',
+#    'Ausland',
+#    NA,
+#    NA,
+#    'CH',
+#    'CH',
+#    'CH',
+#    'CH',
+#    NA,
+#    NA,
+#    'CH',
+#    'CH',
+#    NA,
+#    NA,
+#    'Ausland',
+#    'Ausland'),
+#
+#
+#    unit = c(    NA, 
+#    'Anzahl in Tausend',
+#    'Mio. Fr.',
+#    NA,
+#    NA,
+#    'Anzahl in Tausend',
+#    'Mio. Fr.',
+#    NA,
+#    NA,
+#    'Anzahl in Tausend',
+#    'Anzahl in Tausend',
+#    'Mio. Fr.',
+#    'Mio. Fr.',
+#    NA,
+#    NA,
+#    'Anzahl in Tausend',
+#    'Mio. Fr.',
+#    NA,
+#    NA,
+#    'Anzahl in Tausend',
+#    'Mio. Fr.')
+#)
+#
+#
+##Kontrolle: Stimmen die Variablennamen, unit und location
+#check_names<- kredit %>%
+#  select(variable,variable_long, variable_short,unit,location)
+#xlsx::write.xlsx(check_names,'check_names.xlsx')
+#View(check_names)
+#
+#kredit_long <- kredit%>%
+#  filter(!is.na(variable_long))%>%
+#  tidyr::gather(date, value, -variable,-variable_long, -variable_short,-unit,-location) %>%
+#  mutate(date = substring(date,1,6))%>%
+#  mutate(date = paste(date,'20'))%>%
+#  mutate(date = as.POSIXct(date, format = '%d.%m.%y', timezone='Europe/Zurich'))%>%
+#  mutate(value = round(value,0))%>%
+#  rename(variable_oldname = variable)%>%
+#  mutate(topic= 'Wirtschaft',
+#         public = 'yes',
+#          update = 'wöchentlich',
+#         source = 'Swiss Payment Association',
+#         description = 'https://github.com/statistikZH/covid19monitoring_economy_Kreditkarten')%>%
+#  select(date,value,topic,variable_short,variable_long,location,unit,source,update,public,description)
+#
+#View(kredit_long)
+#
+##Datensatz speichern
+#write.csv(kredit_long,'Economy_Kreditkarten.csv',row.names=F, fileEncoding = "UTF-8")
+```
+
+```{r Plots, echo = F}
+
+#Beträge
+pldf <- kredit_long %>%
+  filter(unit == 'Mio. Fr.')%>%
+  mutate(variable_long = factor(variable_long,levels = c(
+'Betrag Kreditkarten-Transaktionen im Inland',
+'Betrag Kreditkarten-Transaktionen im Ausland',
+'Betrag Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+'Betrag kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland')))
+
+
+p <- ggplot(pldf, aes(date,value))+
+  geom_area() +
+  facet_wrap(~variable_long, ncol = 1)+
+labs(title = 'Beträge in Mio. Fr.',
+      caption = 'Daten: SPA',
+      x = 'Datum',
+      y = 'Mio. CHF') +
+    theme_bw()+
+  theme(legend.position = 'bottom',
+        legend.title = element_blank())
+
+ggplotly(p) %>%  
+  config(displayModeBar = F)
+
+#Anzahl Transaktionen
+pldf2 <- kredit_long %>%
+  filter(unit == 'Anzahl in Tausend')%>%
+  mutate(variable_long = factor(variable_long,levels = c(
+'Anzahl Kreditkarten-Transaktionen im Inland',
+'Anzahl Kreditkarten-Transaktionen im Ausland',
+'Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+'Anzahl kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland')))
+
+
+p2 <- ggplot(pldf2, aes(date,value))+
+  geom_area() +
+  facet_wrap(~variable_long, ncol = 1)+
+labs(title = 'Transaktionen in Tausend',
+      caption = 'Daten: SPA',
+      x = 'Datum',
+      y = 'Anzahl in Tausend') +
+    theme_bw()+
+  theme(legend.position = 'bottom',
+        legend.title = element_blank())
+
+ggplotly(p2) %>%  
+  config(displayModeBar = F)
+```
+
+>>>>>>> 71c9ca6fe17d0dd9407956be10e12c3e7b4fcc51
