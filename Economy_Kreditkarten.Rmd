@@ -173,7 +173,8 @@ pldf <- kredit_long %>%
 'Betrag Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
 'Betrag kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
 'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Inland',
-'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland')))
+'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
+date = as.POSIXct(date, format = '%Y-%m-%d'))
 
 
 p <- ggplot(pldf, aes(date,value))+
@@ -199,7 +200,8 @@ pldf2 <- kredit_long %>%
 'Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
 'Anzahl kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
 'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Inland',
-'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland')))
+'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
+date = as.POSIXct(date, format = '%Y-%m-%d'))
 
 
 p2 <- ggplot(pldf2, aes(date,value))+
