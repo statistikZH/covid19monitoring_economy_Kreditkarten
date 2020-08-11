@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Economy_Kreditkarten"
 subtitle: 'Inländische Kreditkarten'
