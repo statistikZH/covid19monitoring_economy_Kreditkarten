@@ -166,14 +166,16 @@ write.csv(kredit_long,'Economy_Kreditkarten.csv',row.names=F, fileEncoding = "UT
 #Beträge
 pldf <- kredit_long %>%
   filter(unit == 'Mio. Fr.')%>%
-  mutate(variable_long = factor(variable_long,levels = c(
-'Betrag Kreditkarten-Transaktionen im Inland',
-'Betrag Kreditkarten-Transaktionen im Ausland',
-'Betrag Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
-'Betrag kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
-'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Inland',
-'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
-date = as.POSIXct(date, format = '%Y-%m-%d'))
+  mutate(date = as.POSIXct(date, format = '%Y-%m-%d'))
+  
+#  mutate(variable_long = factor(variable_long,levels = c(
+#'Betrag Kreditkarten-Transaktionen im Inland',
+#'Betrag Kreditkarten-Transaktionen im Ausland',
+#'Betrag Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+#'Betrag kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+#'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+#'Betrag Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
+#date = as.POSIXct(date, format = '%Y-%m-%d'))
 
 
 p <- ggplot(pldf, aes(date,value))+
@@ -190,17 +192,20 @@ labs(title = 'Beträge in Mio. Fr.',
 ggplotly(p) %>%  
   config(displayModeBar = F)
 
-#Anzahl Transaktionen
+
 pldf2 <- kredit_long %>%
   filter(unit == 'Anzahl in Tausend')%>%
-  mutate(variable_long = factor(variable_long,levels = c(
-'Anzahl Kreditkarten-Transaktionen im Inland',
-'Anzahl Kreditkarten-Transaktionen im Ausland',
-'Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
-'Anzahl kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
-'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Inland',
-'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
-date = as.POSIXct(date, format = '%Y-%m-%d'))
+  mutate(date = as.POSIXct(date, format = '%Y-%m-%d'))
+  
+#  mutate(variable_long = factor(variable_long,levels = c(
+#'Anzahl Kreditkarten-Transaktionen im Inland',
+#'Anzahl Kreditkarten-Transaktionen im Ausland',
+#'Anzahl Kreditkarten-Transaktionen Präsenzgeschäft im Inland insgesamt',
+#"Anzahl Kreditkarten-Transatkionen Präsenzgeschäft im Ausland",
+#'Anzahl kontaktlose Kreditkarten-Transaktionen Präsenzgeschäft im Inland',
+#'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Inland',
+#'Anzahl Kreditkarten-Transaktionen Distanzgeschäft im Ausland')),
+#)
 
 
 p2 <- ggplot(pldf2, aes(date,value))+
