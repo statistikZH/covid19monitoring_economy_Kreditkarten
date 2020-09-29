@@ -180,7 +180,7 @@ pldf <- kredit_long %>%
 
 p <- ggplot(pldf, aes(date,value))+
   geom_area() +
-  facet_wrap(~variable_long, ncol = 1)+
+  facet_wrap(~variable_long, ncol = 1, scales = 'free_y')+
 labs(title = 'Beträge in Mio. Fr.',
       caption = 'Daten: SPA',
       x = 'Datum',
@@ -210,7 +210,7 @@ pldf2 <- kredit_long %>%
 
 p2 <- ggplot(pldf2, aes(date,value))+
   geom_area() +
-  facet_wrap(~variable_long, ncol = 1)+
+  facet_wrap(~variable_long, ncol = 1, scales = 'free_y')+
 labs(title = 'Transaktionen in Tausend',
       caption = 'Daten: SPA',
       x = 'Datum',
