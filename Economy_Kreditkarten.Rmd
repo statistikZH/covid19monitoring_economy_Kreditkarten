@@ -31,7 +31,7 @@ kredit_long <- read.csv('https://drive.switch.ch/index.php/s/PSg7Y8Za5LmQ5dn/dow
 
 kredit_long$description <- 'https://github.com/statistikZH/covid19monitoring_economy_Kreditkarten'
 
-write.csv(kredit_long,'Economy_Kreditkarten.csv',row.names=F, fileEncoding = "UTF-8")
+#write.csv(kredit_long,'Economy_Kreditkarten.csv',row.names=F, fileEncoding = "UTF-8")
 ```
 
 
